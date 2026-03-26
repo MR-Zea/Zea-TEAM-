@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zea [TEAM] - Community Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/dist/css/all.min.css">
+      <link rel="icon" type="image/png" href="Zea [TEAM].jpg">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap');
+        
+        :root {
+            --zea-primary: #ffffff;
+            --zea-accent: #facc15;
+            --zea-bg: #020617;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+            background-color: var(--zea-bg);
+            color: #f1f5f9;
+        }
+
+        .dark-card {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .hero-glow {
+            background: radial-gradient(circle at 50% 50%, rgba(250, 204, 21, 0.08) 0%, rgba(2, 6, 23, 1) 70%);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #ffffff 0%, #facc15 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .zea-logo-font {
+            font-weight: 900;
+            letter-spacing: -0.05em;
+            text-transform: uppercase;
+        }
+
+        /* Banner Style Responsif */
+        .banner-container {
+            position: relative;
+            width: 100%;
+            height: 250px; /* Default mobile */
+            overflow: hidden;
+        }
+
+        @media (min-width: 768px) {
+            .banner-container {
+                height: 400px; /* Desktop */
+            }
+        }
+
+        .banner-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .banner-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60%;
+            background: linear-gradient(to top, rgba(2, 6, 23, 1) 0%, transparent 100%);
+        }
+
+        /* Premium Social Icons */
+        .social-box {
+            position: relative;
+            width: 50px;
+            height: 50px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
+        }
+
+        @media (min-width: 768px) {
+            .social-box {
+                width: 60px;
+                height: 60px;
+                border-radius: 18px;
+            }
+        }
+
+        .social-box img {
+            width: 28px;
+            height: 28px;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+            transition: transform 0.3s ease;
+        }
+
+        .social-box:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--zea-accent);
+            box-shadow: 0 10px 20px -5px rgba(250, 204, 21, 0.2);
+        }
+
+        .social-box:hover img {
+            transform: scale(1.15);
+        }
+        
+        .btn-zea {
+            background: white;
+            color: black;
+            box-shadow: 0 4px 0px #94a3b8;
+            transition: all 0.2s;
+        }
+
+        .btn-zea:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0px #94a3b8;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigasi -->
+    <nav class="bg-[#020617]/90 backdrop-blur-md sticky top-0 z-50 border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center space-x-3">
+                    <img src="Zea [TEAM].jpg" alt="Zea Team Logo" class="w-10 h-10 rounded-lg object-cover border border-white/10" onerror="this.src='https://via.placeholder.com/40'">
+                    <span class="text-xl md:text-2xl zea-logo-font text-white">Zea <span class="text-yellow-400">[TEAM]</span></span>
+                </div>
+                <!-- Navigasi Desktop -->
+                <div class="hidden md:flex space-x-8 font-bold text-slate-400 text-sm uppercase tracking-widest">
+                    <a href="#beranda" class="hover:text-yellow-400 transition-colors">Home</a>
+                    <a href="#kegiatan" class="hover:text-yellow-400 transition-colors">Project</a>
+                    <a href="#kontak" class="hover:text-yellow-400 transition-colors">Kontak</a>
+                </div>
+                <a href="https://discord.com/invite/rCtkSA3Jet" target="_blank" class="bg-white hover:bg-yellow-400 text-black px-4 md:px-5 py-2 md:py-2.5 rounded-lg font-black transition-all text-[10px] md:text-xs tracking-tighter uppercase shadow-lg">
+                    Discord
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="relative overflow-hidden py-20 md:py-36 border-b border-white/5">
+        <div class="hero-glow"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl md:text-8xl font-black mb-6 md:mb-8 leading-tight md:leading-none tracking-tighter">
+                Zea <span class="gradient-text">[TEAM]</span>
+            </h1>
+            <p class="text-base md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 md:mb-12 italic px-4">
+                komunitas gabut<br>
+- Mod-Em : <a href="https://mod-em.vercel.app/" target="_blank">https://mod-em.vercel.app/</a><br>
+- Linktree : <a href="https://linktr.ee/zealott250" target="_blank">https://linktr.ee/zealott250</a>
+            </p>
+            <a href="#kegiatan" class="btn-zea px-8 md:px-10 py-3 md:py-4 rounded-xl font-black uppercase text-xs md:text-sm tracking-wider inline-block">
+                Explore Project
+            </a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+        <div class="flex flex-col lg:flex-row gap-12 lg:gap-20">
+            
+            <!-- Kolom Kiri: Area Project Utama -->
+            <div class="w-full lg:w-2/3 space-y-16 md:y-24">
+                <section id="kegiatan">
+                    <div class="flex items-center gap-4 mb-8 md:mb-12">
+                        <h2 class="text-2xl md:text-3xl font-black text-white uppercase tracking-tighter">Main Project</h2>
+                        <div class="h-px flex-1 bg-gradient-to-r from-yellow-400/50 to-transparent"></div>
+                    </div>
+
+                    <div class="group dark-card overflow-hidden rounded-[2rem] md:rounded-[2.5rem] border-0 shadow-2xl">
+                        <div class="banner-container">
+                            <img src="ChatGPT Image 26 Mar 2026, 08.55.34.jpg" alt="MOD-EM Banner" class="banner-img group-hover:scale-105 transition duration-700" onerror="this.src='https://via.placeholder.com/800x400'">
+                            <div class="banner-overlay"></div>
+                        </div>
+                        <div class="p-6 md:p-10 -mt-12 md:-mt-16 relative z-20">
+                            <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 md:gap-5 mb-6 md:mb-8">
+                                <img src="Logo.jpg" alt="MOD-EM Logo" class="w-20 h-20 md:w-24 md:h-24 rounded-xl shadow-2xl border border-white/20" onerror="this.src='https://via.placeholder.com/100'">
+                                <div>
+                                    <h3 class="font-black text-3xl md:text-4xl text-white uppercase tracking-tight italic">MOD-EM</h3>
+                                    <p class="text-yellow-400 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em]">Minecraft Mod Provider</p>
+                                </div>
+                            </div>
+                            <p class="text-slate-400 text-sm md:text-lg mb-6 md:mb-8 leading-relaxed">
+                                Upgrade dunia Minecraft kamu dengan teknologi siber terbaru! Download mod pilihan yang telah dioptimasi untuk performa maksimal.
+                            </p>
+                            <a href="https://mod-em.vercel.app/" target="_blank" class="w-full sm:w-auto inline-flex justify-center items-center bg-white text-black px-8 md:px-12 py-4 md:py-5 rounded-xl font-black uppercase text-xs md:text-sm hover:bg-yellow-400 transition-all">
+                                Buka Website
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Kolom Kanan: Sidebar Widget -->
+            <aside class="w-full lg:w-1/3">
+                <div class="lg:sticky lg:top-28 space-y-8">
+                    <div class="dark-card p-2 rounded-[2rem] overflow-hidden border-white/10 shadow-2xl">
+                        <iframe src="https://discord.com/widget?id=1454827515901120707&theme=dark" width="100%" height="450" md:height="550" frameborder="0" class="rounded-2xl"></iframe>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="kontak" class="bg-[#010409] border-t border-white/5 pt-16 md:pt-24 pb-10 md:pb-12 text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-20 mb-16 md:mb-20">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center justify-center md:justify-start space-x-3 mb-8 md:mb-10">
+                        <img src="Zea [TEAM].jpg" alt="Logo" class="w-10 h-10 md:w-12 md:h-12 rounded-lg border border-white/10" onerror="this.src='https://via.placeholder.com/50'">
+                        <span class="text-xl md:text-2xl zea-logo-font text-white">Zea <span class="text-yellow-400">[TEAM]</span></span>
+                    </div>
+                    
+                    <!-- Social Media Links -->
+                    <div class="flex justify-center md:justify-start space-x-4 md:space-x-6">
+                        <a href="https://www.tiktok.com/@zealott250" target="_blank" class="social-box">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok">
+                        </a>
+                        <!-- New YouTube Link -->
+                        <a href="https://www.youtube.com/@Zea_LoTT" target="_blank" class="social-box">
+                            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="text-center md:text-left">
+                    <h4 class="font-black text-white mb-6 md:mb-10 text-[10px] uppercase tracking-[0.2em]">Navigasi</h4>
+                    <ul class="space-y-3 md:space-y-4 font-bold text-sm">
+                        <li><a href="#beranda" class="hover:text-yellow-400 transition-colors">Beranda</a></li>
+                        <li><a href="#kegiatan" class="hover:text-yellow-400 transition-colors">Project</a></li>
+                    </ul>
+                </div>
+                
+                <div class="text-center md:text-left">
+                    <h4 class="font-black text-white mb-6 md:mb-10 text-[10px] uppercase tracking-[0.2em]">Community</h4>
+                    <p class="text-xs italic leading-relaxed">Bergabung dengan kami untuk mendapatkan update terbaru seputar modding dan kreativitas.</p>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/5 pt-8 md:pt-10 flex justify-center md:justify-start">
+                <p class="text-[9px] md:text-[10px] font-black tracking-widest uppercase text-slate-600">
+                    &copy; 2024 Zea [TEAM] Collective. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth Scroll dengan Offset untuk Navigasi Sticky
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 90,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
